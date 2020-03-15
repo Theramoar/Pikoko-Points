@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Lqh-Kk-Va8">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Enter names-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="EnterPlayerVC" customModule="Pikoko_Points" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lfb-e1-8ef">
+                                <rect key="frame" x="0.0" y="118" width="375" height="461"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EnterPlayerCell" id="YDa-9h-OvE" customClass="EnterPlayerCell" customModule="Pikoko_Points" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YDa-9h-OvE" id="3CM-Zf-mPP">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="R3Q-TO-2Wj" customClass="PlayerImageView" customModule="Pikoko_Points" customModuleProvider="target">
+                                                    <rect key="frame" x="15" y="6" width="32" height="32"/>
+                                                    <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="32" id="vHZ-aT-6ie"/>
+                                                        <constraint firstAttribute="width" constant="32" id="xyr-pf-0tj"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Player's name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c9e-gR-KI9">
+                                                    <rect key="frame" x="62" y="13.333333333333336" width="298" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="R3Q-TO-2Wj" firstAttribute="leading" secondItem="3CM-Zf-mPP" secondAttribute="leading" constant="15" id="5eI-FR-WCz"/>
+                                                <constraint firstAttribute="trailing" secondItem="c9e-gR-KI9" secondAttribute="trailing" constant="15" id="KTn-YM-pkF"/>
+                                                <constraint firstItem="c9e-gR-KI9" firstAttribute="centerY" secondItem="3CM-Zf-mPP" secondAttribute="centerY" id="N2g-ue-3nZ"/>
+                                                <constraint firstItem="R3Q-TO-2Wj" firstAttribute="centerY" secondItem="3CM-Zf-mPP" secondAttribute="centerY" id="a16-KR-k5E"/>
+                                                <constraint firstItem="c9e-gR-KI9" firstAttribute="leading" secondItem="R3Q-TO-2Wj" secondAttribute="trailing" constant="15" id="hIR-RV-Pym"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="playerColor" destination="R3Q-TO-2Wj" id="zlR-Tm-Clu"/>
+                                            <outlet property="playerNameText" destination="c9e-gR-KI9" id="KlX-Yq-hTE"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7c2-Q7-JaE" customClass="MainButton" customModule="Pikoko_Points" customModuleProvider="target">
+                                <rect key="frame" x="62" y="587" width="250" height="44"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="u5l-i5-nid"/>
+                                </constraints>
+                                <state key="normal" title="Add Players">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveButtonPlaced:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ycY-nm-yvG"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write names for at least 2 players" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OZl-py-fzv">
+                                <rect key="frame" x="44" y="50" width="287" height="48"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="lfb-e1-8ef" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5P4-1S-mIM"/>
+                            <constraint firstItem="7c2-Q7-JaE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="62" id="BgC-2b-hY0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OZl-py-fzv" secondAttribute="trailing" constant="44" id="KDe-aD-2oP"/>
+                            <constraint firstItem="7c2-Q7-JaE" firstAttribute="top" secondItem="lfb-e1-8ef" secondAttribute="bottom" constant="8" symbolic="YES" id="KTA-qo-jZI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7c2-Q7-JaE" secondAttribute="trailing" constant="63" id="Nqm-aq-LgT"/>
+                            <constraint firstItem="OZl-py-fzv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="44" id="csA-D3-3qY"/>
+                            <constraint firstItem="OZl-py-fzv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="gRF-Wa-VNF"/>
+                            <constraint firstItem="lfb-e1-8ef" firstAttribute="top" secondItem="OZl-py-fzv" secondAttribute="bottom" constant="20" id="k0n-f4-eNO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7c2-Q7-JaE" secondAttribute="bottom" constant="93" id="ocA-Cd-2Fa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lfb-e1-8ef" secondAttribute="trailing" id="pm1-8x-XOC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Enter names" id="2nr-5G-eEZ"/>
+                    <connections>
+                        <outlet property="tableView" destination="lfb-e1-8ef" id="n8b-7h-P8V"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3762.4000000000001" y="138.91625615763547"/>
+        </scene>
+        <!--Pikoko Calculator-->
+        <scene sceneID="ZF7-wZ-X8w">
+            <objects>
+                <viewController id="HPM-4U-gcn" customClass="HomeVC" customModule="Pikoko_Points" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NeS-sf-wIw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fxn-P2-WIS">
+                                <rect key="frame" x="0.0" y="88" width="375" height="690"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlayerCell" id="kiI-Vy-DdH" customClass="PlayerCell" customModule="Pikoko_Points" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kiI-Vy-DdH" id="FUk-Ic-6Hv">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="VMO-Wy-EZc" customClass="PlayerImageView" customModule="Pikoko_Points" customModuleProvider="target">
+                                                    <rect key="frame" x="15" y="7" width="32" height="32.666666666666664"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="32" id="B6h-q4-pNg"/>
+                                                        <constraint firstAttribute="width" constant="32" id="ZY4-Bg-6XJ"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J2I-eM-3NN">
+                                                    <rect key="frame" x="77" y="11" width="182" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0vA-ha-VXV">
+                                                    <rect key="frame" x="296" y="11" width="64" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="J2I-eM-3NN" firstAttribute="leading" secondItem="VMO-Wy-EZc" secondAttribute="trailing" constant="30" id="1ms-rc-fvX"/>
+                                                <constraint firstItem="0vA-ha-VXV" firstAttribute="bottom" secondItem="FUk-Ic-6Hv" secondAttribute="bottomMargin" id="KOq-we-RZK"/>
+                                                <constraint firstItem="0vA-ha-VXV" firstAttribute="top" secondItem="FUk-Ic-6Hv" secondAttribute="topMargin" id="Vsy-ju-Mpq"/>
+                                                <constraint firstItem="VMO-Wy-EZc" firstAttribute="leading" secondItem="FUk-Ic-6Hv" secondAttribute="leading" constant="15" id="X6l-8o-o8w"/>
+                                                <constraint firstItem="VMO-Wy-EZc" firstAttribute="top" secondItem="FUk-Ic-6Hv" secondAttribute="top" constant="7" id="bfm-Vz-iZB"/>
+                                                <constraint firstItem="0vA-ha-VXV" firstAttribute="trailing" secondItem="FUk-Ic-6Hv" secondAttribute="trailingMargin" id="cN7-Gu-goW"/>
+                                                <constraint firstItem="J2I-eM-3NN" firstAttribute="bottom" secondItem="FUk-Ic-6Hv" secondAttribute="bottomMargin" id="hvv-fB-RgR"/>
+                                                <constraint firstItem="J2I-eM-3NN" firstAttribute="top" secondItem="FUk-Ic-6Hv" secondAttribute="topMargin" id="kdI-s7-tFr"/>
+                                                <constraint firstItem="0vA-ha-VXV" firstAttribute="leading" secondItem="J2I-eM-3NN" secondAttribute="trailing" constant="37" id="oK9-Ho-B4a"/>
+                                                <constraint firstAttribute="bottom" secondItem="VMO-Wy-EZc" secondAttribute="bottom" constant="4.5" id="znD-nm-Yd8"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="playerColorImage" destination="VMO-Wy-EZc" id="EOI-WW-sYT"/>
+                                            <outlet property="playerNameLabel" destination="J2I-eM-3NN" id="n7H-SB-tBh"/>
+                                            <outlet property="playerScoreLabel" destination="0vA-ha-VXV" id="9sX-Zv-heJ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GlJ-J4-Q06" customClass="MainButton" customModule="Pikoko_Points" customModuleProvider="target">
+                                <rect key="frame" x="63" y="641" width="250" height="44"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="ion-EF-ebn"/>
+                                </constraints>
+                                <state key="normal" title="Next Player">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="playButtonPressed:" destination="HPM-4U-gcn" eventType="touchUpInside" id="JIo-8g-bfi"/>
+                                    <action selector="saveButtonPlaced:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tIJ-4u-mQ6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7PM-GA-EYm">
+                                <rect key="frame" x="59.666666666666657" y="376" width="255.99999999999997" height="60"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <state key="normal" title="+ Add Players">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="addButtonPressed:" destination="HPM-4U-gcn" eventType="touchUpInside" id="R6U-5V-rng"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Uye-yt-Qiv" firstAttribute="trailing" secondItem="GlJ-J4-Q06" secondAttribute="trailing" constant="62" id="4Uw-Gt-1QN"/>
+                            <constraint firstItem="fxn-P2-WIS" firstAttribute="top" secondItem="Uye-yt-Qiv" secondAttribute="top" id="CAg-LJ-T3e"/>
+                            <constraint firstItem="fxn-P2-WIS" firstAttribute="bottom" secondItem="Uye-yt-Qiv" secondAttribute="bottom" id="CHu-3b-Uo9"/>
+                            <constraint firstItem="7PM-GA-EYm" firstAttribute="centerX" secondItem="NeS-sf-wIw" secondAttribute="centerX" id="HTn-Rp-AUL"/>
+                            <constraint firstItem="Uye-yt-Qiv" firstAttribute="bottom" secondItem="GlJ-J4-Q06" secondAttribute="bottom" constant="93" id="gaY-aL-GoO"/>
+                            <constraint firstItem="GlJ-J4-Q06" firstAttribute="leading" secondItem="Uye-yt-Qiv" secondAttribute="leading" constant="63" id="iXa-XS-m3m"/>
+                            <constraint firstItem="fxn-P2-WIS" firstAttribute="leading" secondItem="Uye-yt-Qiv" secondAttribute="leading" id="kFf-jY-l4g"/>
+                            <constraint firstItem="7PM-GA-EYm" firstAttribute="centerY" secondItem="NeS-sf-wIw" secondAttribute="centerY" id="mSg-KK-W6Z"/>
+                            <constraint firstItem="fxn-P2-WIS" firstAttribute="trailing" secondItem="Uye-yt-Qiv" secondAttribute="trailing" id="v0J-jK-2aU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Uye-yt-Qiv"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Pikoko Calculator" id="EUt-d9-FPh"/>
+                    <connections>
+                        <outlet property="addButton" destination="7PM-GA-EYm" id="x3k-WB-H26"/>
+                        <outlet property="playButton" destination="GlJ-J4-Q06" id="MwN-tO-P7E"/>
+                        <outlet property="tableView" destination="fxn-P2-WIS" id="CHd-ra-lio"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="AddPlayers" modalTransitionStyle="coverVertical" id="C7R-UH-lGN"/>
+                        <segue destination="yJ2-hf-7pa" kind="presentation" identifier="ShowPlaysTaken" modalTransitionStyle="coverVertical" id="Fuu-KK-okI"/>
+                        <segue destination="y57-f4-bFE" kind="presentation" identifier="ShowBets" modalTransitionStyle="coverVertical" id="GIW-i2-vk4"/>
+                        <segue destination="s3L-nm-RnK" kind="presentation" identifier="ShowConfidence" modalTransitionStyle="coverVertical" id="oeV-ad-yCc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1an-ds-mTN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2842.4000000000001" y="138.91625615763547"/>
+        </scene>
+        <!--BetsVC-->
+        <scene sceneID="Osj-yx-Zx5">
+            <objects>
+                <viewController id="y57-f4-bFE" customClass="BetsVC" customModule="Pikoko_Points" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="byx-su-fRD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="K4j-2e-pu9" customClass="PlayerImageView" customModule="Pikoko_Points" customModuleProvider="target">
+                                <rect key="frame" x="136" y="82" width="103" height="103"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="103" id="LlU-9j-U1d"/>
+                                    <constraint firstAttribute="width" constant="103" id="tQg-46-J0c"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place your bets on:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zmO-pO-1Ax">
+                                <rect key="frame" x="98" y="50" width="179" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HD9-5n-j5q">
+                                <rect key="frame" x="0.0" y="205" width="375" height="382"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlayerBetCell" id="esy-aC-lfX" customClass="PlayerBetCell" customModule="Pikoko_Points" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="esy-aC-lfX" id="DiY-B0-ha5">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Yuf-aa-quJ" customClass="PlayerImageView" customModule="Pikoko_Points" customModuleProvider="target">
+                                                    <rect key="frame" x="15" y="6" width="32" height="32"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="32" id="Rnh-mX-JCc"/>
+                                                        <constraint firstAttribute="width" constant="32" id="r7m-qv-7gS"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q5g-Ms-BlE">
+                                                    <rect key="frame" x="61.999999999999986" y="11.333333333333336" width="228.66666666666663" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your bet" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="klg-Jf-NGh">
+                                                    <rect key="frame" x="305.66666666666669" y="13.333333333333336" width="54.333333333333314" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Q5g-Ms-BlE" firstAttribute="leading" secondItem="Yuf-aa-quJ" secondAttribute="trailing" constant="15" id="1fr-88-A8y"/>
+                                                <constraint firstItem="Yuf-aa-quJ" firstAttribute="leading" secondItem="DiY-B0-ha5" secondAttribute="leading" constant="15" id="5Ab-I9-FZU"/>
+                                                <constraint firstAttribute="trailing" secondItem="klg-Jf-NGh" secondAttribute="trailing" constant="15" id="FCD-nV-5aF"/>
+                                                <constraint firstItem="Q5g-Ms-BlE" firstAttribute="centerY" secondItem="DiY-B0-ha5" secondAttribute="centerY" id="O67-Hb-VmC"/>
+                                                <constraint firstItem="klg-Jf-NGh" firstAttribute="leading" secondItem="Q5g-Ms-BlE" secondAttribute="trailing" constant="15" id="OwZ-l3-XLg"/>
+                                                <constraint firstItem="Yuf-aa-quJ" firstAttribute="centerY" secondItem="DiY-B0-ha5" secondAttribute="centerY" id="e4m-B3-Cfq"/>
+                                                <constraint firstItem="klg-Jf-NGh" firstAttribute="centerY" secondItem="DiY-B0-ha5" secondAttribute="centerY" id="qCf-Jl-1RC"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="playerBetsTextField" destination="klg-Jf-NGh" id="NwY-6Y-b0c"/>
+                                            <outlet property="playerImage" destination="Yuf-aa-quJ" id="lqW-ay-JhG"/>
+                                            <outlet property="playerNameLabel" destination="Q5g-Ms-BlE" id="6na-KS-UAl"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e6h-MK-TSh" customClass="MainButton" customModule="Pikoko_Points" customModuleProvider="target">
+                                <rect key="frame" x="62.666666666666657" y="607" width="249.99999999999997" height="44"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="P13-j2-KRv"/>
+                                </constraints>
+                                <state key="normal" title="Next Player">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextPlayerPressed:" destination="y57-f4-bFE" eventType="touchUpInside" id="nKp-0b-kPK"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="Dkd-Ci-0mw">
+                                <rect key="frame" x="152.66666666666666" y="123.00000000000001" width="70" height="20.666666666666671"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="6v2-xS-2JI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="IfC-fd-edD" firstAttribute="trailing" secondItem="e6h-MK-TSh" secondAttribute="trailing" constant="62.5" id="5t7-2R-PSy"/>
+                            <constraint firstItem="IfC-fd-edD" firstAttribute="bottom" secondItem="e6h-MK-TSh" secondAttribute="bottom" constant="73" id="9D6-Gf-olg"/>
+                            <constraint firstItem="K4j-2e-pu9" firstAttribute="top" secondItem="zmO-pO-1Ax" secondAttribute="bottom" constant="8" id="K2i-nB-MyW"/>
+                            <constraint firstItem="zmO-pO-1Ax" firstAttribute="centerX" secondItem="byx-su-fRD" secondAttribute="centerX" id="NCz-Hd-PeU"/>
+                            <constraint firstItem="HD9-5n-j5q" firstAttribute="top" secondItem="K4j-2e-pu9" secondAttribute="bottom" constant="20" id="OLd-KC-rTZ"/>
+                            <constraint firstItem="HD9-5n-j5q" firstAttribute="leading" secondItem="IfC-fd-edD" secondAttribute="leading" id="RPs-mG-Lpi"/>
+                            <constraint firstItem="Dkd-Ci-0mw" firstAttribute="centerX" secondItem="byx-su-fRD" secondAttribute="centerX" id="ZNA-Fc-um5"/>
+                            <constraint firstItem="zmO-pO-1Ax" firstAttribute="top" secondItem="IfC-fd-edD" secondAttribute="top" constant="50" id="cMn-6P-1Yl"/>
+                            <constraint firstItem="HD9-5n-j5q" firstAttribute="trailing" secondItem="IfC-fd-edD" secondAttribute="trailing" id="k3N-DX-1su"/>
+                            <constraint firstItem="e6h-MK-TSh" firstAttribute="top" secondItem="HD9-5n-j5q" secondAttribute="bottom" constant="20" id="kav-Ot-Ipd"/>
+                            <constraint firstItem="K4j-2e-pu9" firstAttribute="centerX" secondItem="byx-su-fRD" secondAttribute="centerX" id="oxB-1G-maA"/>
+                            <constraint firstItem="Dkd-Ci-0mw" firstAttribute="top" secondItem="zmO-pO-1Ax" secondAttribute="bottom" constant="49" id="sXj-OD-Yda"/>
+                            <constraint firstItem="e6h-MK-TSh" firstAttribute="leading" secondItem="IfC-fd-edD" secondAttribute="leading" constant="62.5" id="w17-1m-ZAo"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="IfC-fd-edD"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="FP5-YE-vKg"/>
+                    <connections>
+                        <outlet property="selectedPlayerImageView" destination="K4j-2e-pu9" id="xU5-uN-xGd"/>
+                        <outlet property="selectedPlayerLabel" destination="Dkd-Ci-0mw" id="CwC-sK-1Xe"/>
+                        <outlet property="tableView" destination="HD9-5n-j5q" id="96J-dE-I7X"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qbB-tX-7SL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2842" y="920"/>
+        </scene>
+        <!--Plays TakenVC-->
+        <scene sceneID="AWa-XJ-y3l">
+            <objects>
+                <viewController id="yJ2-hf-7pa" customClass="PlaysTakenVC" customModule="Pikoko_Points" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WLv-Tk-oxy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How many Plays each player has taken?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vxL-K2-lEh">
+                                <rect key="frame" x="69" y="50" width="236" height="48"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="d8l-Q2-Veq">
+                                <rect key="frame" x="0.0" y="118" width="375" height="444"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlayerBetCell" id="CIF-6C-SNG" customClass="PlayerBetCell" customModule="Pikoko_Points" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CIF-6C-SNG" id="wyR-Ss-y7u">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RAj-Ga-fCq" customClass="PlayerImageView" customModule="Pikoko_Points" customModuleProvider="target">
+                                                    <rect key="frame" x="15" y="6" width="32" height="32"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="32" id="1th-uB-uaR"/>
+                                                        <constraint firstAttribute="height" constant="32" id="wDO-GR-a3l"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzm-In-IPk">
+                                                    <rect key="frame" x="61.999999999999986" y="11.333333333333336" width="209.66666666666663" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Plays taken" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PTZ-wi-nh1">
+                                                    <rect key="frame" x="286.66666666666669" y="13.333333333333336" width="73.333333333333314" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="RAj-Ga-fCq" firstAttribute="centerY" secondItem="wyR-Ss-y7u" secondAttribute="centerY" id="CtS-8v-lON"/>
+                                                <constraint firstItem="RAj-Ga-fCq" firstAttribute="leading" secondItem="wyR-Ss-y7u" secondAttribute="leading" constant="15" id="IeK-gt-W9e"/>
+                                                <constraint firstItem="jzm-In-IPk" firstAttribute="centerY" secondItem="wyR-Ss-y7u" secondAttribute="centerY" id="LaG-12-dkQ"/>
+                                                <constraint firstItem="PTZ-wi-nh1" firstAttribute="centerY" secondItem="wyR-Ss-y7u" secondAttribute="centerY" id="Oeq-CA-hTb"/>
+                                                <constraint firstAttribute="trailing" secondItem="PTZ-wi-nh1" secondAttribute="trailing" constant="15" id="Sev-BX-qgw"/>
+                                                <constraint firstItem="PTZ-wi-nh1" firstAttribute="leading" secondItem="jzm-In-IPk" secondAttribute="trailing" constant="15" id="dDs-qn-pOM"/>
+                                                <constraint firstItem="jzm-In-IPk" firstAttribute="leading" secondItem="RAj-Ga-fCq" secondAttribute="trailing" constant="15" id="pSs-rx-gQH"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="playerBetsTextField" destination="PTZ-wi-nh1" id="Aa1-LP-Fz3"/>
+                                            <outlet property="playerImage" destination="RAj-Ga-fCq" id="azR-42-E9y"/>
+                                            <outlet property="playerNameLabel" destination="jzm-In-IPk" id="NFK-0o-YYE"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bUH-t6-q7J" customClass="MainButton" customModule="Pikoko_Points" customModuleProvider="target">
+                                <rect key="frame" x="62.666666666666657" y="607" width="249.99999999999997" height="44"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="LFw-Ny-iCD"/>
+                                </constraints>
+                                <state key="normal" title="Calculate points">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="calculateButtonPressed:" destination="yJ2-hf-7pa" eventType="touchUpInside" id="xlw-zN-il2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Uy1-A2-J1C" firstAttribute="trailing" secondItem="vxL-K2-lEh" secondAttribute="trailing" constant="70" id="7P8-Hk-zn5"/>
+                            <constraint firstItem="vxL-K2-lEh" firstAttribute="top" secondItem="Uy1-A2-J1C" secondAttribute="top" constant="50" id="Lpx-yJ-8lv"/>
+                            <constraint firstItem="bUH-t6-q7J" firstAttribute="leading" secondItem="Uy1-A2-J1C" secondAttribute="leading" constant="62.5" id="Qoe-K3-cIN"/>
+                            <constraint firstItem="Uy1-A2-J1C" firstAttribute="bottom" secondItem="bUH-t6-q7J" secondAttribute="bottom" constant="73" id="WiJ-rj-FoM"/>
+                            <constraint firstItem="Uy1-A2-J1C" firstAttribute="trailing" secondItem="bUH-t6-q7J" secondAttribute="trailing" constant="62.5" id="ZnL-9i-9OX"/>
+                            <constraint firstItem="d8l-Q2-Veq" firstAttribute="trailing" secondItem="Uy1-A2-J1C" secondAttribute="trailing" id="aZb-XD-QwR"/>
+                            <constraint firstItem="d8l-Q2-Veq" firstAttribute="top" secondItem="vxL-K2-lEh" secondAttribute="bottom" constant="20" id="dLI-vz-UbW"/>
+                            <constraint firstItem="vxL-K2-lEh" firstAttribute="leading" secondItem="Uy1-A2-J1C" secondAttribute="leading" constant="69" id="iRV-fW-1kP"/>
+                            <constraint firstItem="bUH-t6-q7J" firstAttribute="top" secondItem="d8l-Q2-Veq" secondAttribute="bottom" constant="45" id="wle-3H-Us1"/>
+                            <constraint firstItem="d8l-Q2-Veq" firstAttribute="leading" secondItem="Uy1-A2-J1C" secondAttribute="leading" id="xt7-YD-NDW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Uy1-A2-J1C"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="vMX-1B-I6r"/>
+                    <connections>
+                        <outlet property="tableView" destination="d8l-Q2-Veq" id="i2p-wM-aoh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IXC-fi-0X9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3762" y="920"/>
+        </scene>
+        <!--Confidence CardVC-->
+        <scene sceneID="tVL-RW-unT">
+            <objects>
+                <viewController id="s3L-nm-RnK" customClass="ConfidenceCardVC" customModule="Pikoko_Points" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qab-GP-RtW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place your Confidence Card:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MRY-Q9-6lG">
+                                <rect key="frame" x="86" y="50" width="203" height="48"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Iye-cH-zu8">
+                                <rect key="frame" x="0.0" y="118" width="375" height="405"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ConfidenceCardCell" id="Ede-5Y-WCh" customClass="ConfidenceCardCell" customModule="Pikoko_Points" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ede-5Y-WCh" id="e11-4f-gF7">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CY0-do-UZX" customClass="PlayerImageView" customModule="Pikoko_Points" customModuleProvider="target">
+                                                    <rect key="frame" x="15" y="6" width="32" height="32"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="32" id="3FU-UP-wIW"/>
+                                                        <constraint firstAttribute="width" constant="32" id="HtJ-QX-6g2"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYU-uG-JG9">
+                                                    <rect key="frame" x="62" y="11.333333333333336" width="157" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="No Confidence (+1)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qIu-eB-6aC">
+                                                    <rect key="frame" x="234" y="13.333333333333336" width="126" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="qIu-eB-6aC" firstAttribute="centerY" secondItem="e11-4f-gF7" secondAttribute="centerY" id="2Bx-FL-Lar"/>
+                                                <constraint firstItem="CY0-do-UZX" firstAttribute="centerY" secondItem="e11-4f-gF7" secondAttribute="centerY" id="ItL-CU-x8e"/>
+                                                <constraint firstItem="bYU-uG-JG9" firstAttribute="leading" secondItem="CY0-do-UZX" secondAttribute="trailing" constant="15" id="JqE-lb-gk1"/>
+                                                <constraint firstItem="bYU-uG-JG9" firstAttribute="centerY" secondItem="e11-4f-gF7" secondAttribute="centerY" id="U2h-Ro-qjG"/>
+                                                <constraint firstItem="CY0-do-UZX" firstAttribute="leading" secondItem="e11-4f-gF7" secondAttribute="leading" constant="15" id="Wuo-Nx-HuL"/>
+                                                <constraint firstAttribute="trailing" secondItem="qIu-eB-6aC" secondAttribute="trailing" constant="15" id="XDZ-H0-73Y"/>
+                                                <constraint firstItem="qIu-eB-6aC" firstAttribute="leading" secondItem="bYU-uG-JG9" secondAttribute="trailing" constant="15" id="taX-oS-aVh"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="playerBetsTextField" destination="qIu-eB-6aC" id="53x-tl-4Yi"/>
+                                            <outlet property="playerImage" destination="CY0-do-UZX" id="Tay-H4-thS"/>
+                                            <outlet property="playerNameLabel" destination="bYU-uG-JG9" id="G7r-ZW-nwm"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TeC-Ju-3TL" customClass="MainButton" customModule="Pikoko_Points" customModuleProvider="target">
+                                <rect key="frame" x="62.666666666666657" y="607" width="249.99999999999997" height="44"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="eYY-3w-ueI"/>
+                                </constraints>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextButtonPressed:" destination="s3L-nm-RnK" eventType="touchUpInside" id="vGk-VW-tJr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Iye-cH-zu8" firstAttribute="trailing" secondItem="vWp-jp-iGz" secondAttribute="trailing" id="2GA-BL-s73"/>
+                            <constraint firstItem="vWp-jp-iGz" firstAttribute="trailing" secondItem="TeC-Ju-3TL" secondAttribute="trailing" constant="62.5" id="4bS-yj-nZa"/>
+                            <constraint firstItem="TeC-Ju-3TL" firstAttribute="leading" secondItem="vWp-jp-iGz" secondAttribute="leading" constant="62.5" id="PMe-bi-rhc"/>
+                            <constraint firstItem="Iye-cH-zu8" firstAttribute="top" secondItem="MRY-Q9-6lG" secondAttribute="bottom" constant="20" id="UJs-Wm-Ys4"/>
+                            <constraint firstItem="TeC-Ju-3TL" firstAttribute="top" secondItem="Iye-cH-zu8" secondAttribute="bottom" constant="84" id="b6r-Bk-XPy"/>
+                            <constraint firstItem="vWp-jp-iGz" firstAttribute="bottom" secondItem="TeC-Ju-3TL" secondAttribute="bottom" constant="73" id="bhq-EP-Drq"/>
+                            <constraint firstItem="MRY-Q9-6lG" firstAttribute="leading" secondItem="vWp-jp-iGz" secondAttribute="leading" constant="86" id="bsy-uU-0Ru"/>
+                            <constraint firstItem="vWp-jp-iGz" firstAttribute="trailing" secondItem="MRY-Q9-6lG" secondAttribute="trailing" constant="86" id="hwb-ig-iin"/>
+                            <constraint firstItem="Iye-cH-zu8" firstAttribute="leading" secondItem="vWp-jp-iGz" secondAttribute="leading" id="r1g-qd-Nks"/>
+                            <constraint firstItem="MRY-Q9-6lG" firstAttribute="top" secondItem="vWp-jp-iGz" secondAttribute="top" constant="50" id="tIS-hj-Ati"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vWp-jp-iGz"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="8Rl-lZ-KJ8"/>
+                    <connections>
+                        <outlet property="tableView" destination="Iye-cH-zu8" id="Myk-mR-eq2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4IM-Jw-q9x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1900" y="920"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="uZX-bt-8xO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Lqh-Kk-Va8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xM8-Y2-dBQ">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="HPM-4U-gcn" kind="relationship" relationship="rootViewController" id="UjD-Gc-rBo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dHd-Bl-8kk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1900" y="138.91625615763547"/>
+        </scene>
+    </scenes>
+</document>
